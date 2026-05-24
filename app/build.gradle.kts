@@ -1,15 +1,13 @@
 plugins {
     alias(libs.plugins.android.application)
+    // No longer need to apply kotlin-android explicitly in AGP 9.0+ as it's built-in
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
     namespace = "com.example.moviecatalog"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.moviecatalog"
@@ -30,13 +28,10 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    buildFeatures {
-        compose = true
-    }
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
@@ -48,6 +43,24 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
+    // Navegação
+    implementation(libs.androidx.navigation.compose)
+
+    // Coil (Imagens)
+    implementation(libs.coil.compose)
+
+    // Retrofit + OkHttp + Conversor Serialization
+    implementation(libs.retrofit)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+    implementation(libs.okhttp.logging)
+
+    // Jetpack DataStore Preferences (Para Favoritos)
+    implementation(libs.androidx.datastore.preferences)
+
+    // Testes
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
