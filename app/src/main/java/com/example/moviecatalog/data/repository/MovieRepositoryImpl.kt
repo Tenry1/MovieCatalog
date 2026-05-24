@@ -1,12 +1,13 @@
-package com.example.moviecatalog.domain.repository
+package com.example.moviecatalog.data.repository
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringSetPreferencesKey
-import com.example.moviecatalog.data.TmdbApiService
+import com.example.moviecatalog.data.remote.TmdbApiService
 import com.example.moviecatalog.domain.model.Movie
 import com.example.moviecatalog.domain.model.toDomainModel
+import com.example.moviecatalog.domain.repository.MovieRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map

@@ -7,7 +7,6 @@ import androidx.datastore.preferences.preferencesDataStore
 import com.example.moviecatalog.data.remote.TmdbApiService
 import com.example.moviecatalog.data.repository.MovieRepositoryImpl
 import com.example.moviecatalog.domain.repository.MovieRepository
-import com.example.moviecatalog.domain.repository.MovieRepositoryImpl
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
