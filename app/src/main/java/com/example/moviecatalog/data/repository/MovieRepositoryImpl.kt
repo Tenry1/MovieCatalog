@@ -16,7 +16,7 @@ class MovieRepositoryImpl (
     private val apiService: TmdbApiService,
     private val dataStore: DataStore<Preferences>
 ) : MovieRepository {
-    private val apiKey = "API_KEY"
+    private val apiKey = ""
 
     private companion object {
         val FAVORITE_IDS_KEY = stringSetPreferencesKey("favorite_movie_ids")
