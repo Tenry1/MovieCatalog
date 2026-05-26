@@ -44,23 +44,14 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
-
-    // Navegação
     implementation(libs.androidx.navigation.compose)
-
-    // Coil (Imagens)
     implementation(libs.coil.compose)
-
-    // Retrofit + OkHttp + Conversor Serialization
     implementation(libs.retrofit)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.retrofit2.kotlinx.serialization.converter)
     implementation(libs.okhttp.logging)
-
-    // Jetpack DataStore Preferences (Para Favoritos)
     implementation(libs.androidx.datastore.preferences)
-
-    // Testes
+    implementation(libs.androidx.compose.material.icons.core)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
